@@ -10,17 +10,77 @@
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav class="sidebar-ry">
-        <header class="side-logo">
-            <div class="span-logo">
-                <i class="fa-sharp fa-solid fa-cube"></i>
-                <h1>ESRAN</h1>
-            </div>
-        </header>
-        <div class="nav-menu">
-
+    <aside class="sidebar-ry">
+        <div class="ry-nav-menu">
+            <header class="side-logo">
+                <div class="span-logo">
+                    <i class="fa-sharp fa-solid fa-cube"></i>
+                    <span class="ry-title">ESRAN</span>
+                </div>
+                <button class="btn-ry-toggle">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </header>
+            <nav class="ry-nav">
+                <div class="text-searcher">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar.." class="bg-none border-none"/>
+                    <!--i class="fa-solid fa-xmark"></i-->
+                </div>
+                <ul class="ry-nav-ul">
+                    <li>
+                        <i class="fa-solid fa-house"></i>
+                        <span>Hogar</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <span>Estadisticas</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span>Entrads</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-database"></i>
+                        <span>Base de datos</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-compass-drafting"></i>
+                        <span>Apariencia</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-users"></i>
+                        <span>Gestion de usuarios</span>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+        <div class="ry-bar-settings">
+            <div class="ry-bar-user-info">
+                <div class="ry-bar-photo">
+                  <img src="/images/userphoto.png" alt="">  
+                </div>
+                <span>User name</span>
+            </div>
+            <button class="ry-bar-logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>logout</span>
+            </button>
+        </div>
+    </aside>
+    <div class="ry-home">
+        <h2>Lorem, ipsum dolor sit</h2>
+        <div class="contenedor w-total">
+            <main class="grilla w-total clmn-6 clmn-med-2 clmn-min-1">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+                <div class="card">Card 6</div>
+            </main>
+        </div>
+    </div>
     <!--nav class="navigator bg-blacker color-white">
     url: https://www.codingnepalweb.com/sidebar-menu-in-html-css-javascript-dark-light-mode/
         <div class="titler">
@@ -125,6 +185,16 @@
             </button>
         </div>
     </div-->
-    <script src="js/FadeEffect.js"></script>
+    <script>
+        let doc = document;
+        let rySideBar = doc.querySelector('.sidebar-ry');
+        let btnToggleRy = doc.querySelector('.btn-ry-toggle');
+        console.log(btnToggleRy);
+        
+        btnToggleRy.addEventListener('click', () => {
+            console.log(rySideBar);
+            rySideBar.classList.toggle('close');
+        });
+    </script>
 </body>
 </html>

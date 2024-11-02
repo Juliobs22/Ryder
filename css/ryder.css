@@ -79,10 +79,19 @@ img {
     background-color: var(--color-black-leave);
 }
 
+.bg-none {background: none;}
+
 .color-white {
     color: var(--bg-light);
 }
 
+/**********************
+    Border
+**********************/
+.border-none {
+    border: none;
+    outline: none;
+}
 /********************
     Components
 ********************/
@@ -143,6 +152,19 @@ button{
 .btn-classic:hover{
     background-color: var(--color-primary-sec);
 }
+.text-searcher{
+    background: none;
+    color: var(--bg-light);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid var(--bg-dark);
+    margin: 12px 0;
+}
+.text-searcher input {
+    display: block;
+}
 /**Sidebar Menu**/
 .side-logo{
     border-bottom: 1px solid var(--bg-white);
@@ -152,23 +174,115 @@ button{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    gap: 3px;
+    margin-bottom: 12px;
 }
-.span-logo h1{
-    font-size: 24pxpx;
+.span-logo .ry-title{
+    font-size: 24px;
     margin-bottom: 0;
 }
 .span-logo i{
-    font-size: 1.8rem;
+    font-size: 1.95rem;
 }
 .sidebar-ry{
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
+    width: 255px;
     background-color: var(--color-black-leave);
     padding: 12px;
     color: var(--bg-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     transition: all 0.5s ease;
+}
+
+.sidebar-ry.close {
+    width: 78px;
+}
+
+.sidebar-ry.close .btn-ry-toggle{
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.side-logo .btn-ry-toggle{
+    position: absolute;
+    top: 2%;
+    right: -8px;
+    background-color: var(--color-primary);
+    color: var(--bg-white);
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-50%) rotate(180deg);
+    transition: var(--tran-05);
+}
+
+.ry-nav-menu{
+    display: flex;
+    flex-direction: column;;
+}
+.sidebar-ry .ry-nav .ry-nav-ul{
+    list-style: none;
+    padding: 5px 8px;
+}
+
+.sidebar-ry .ry-nav .ry-nav-ul li{
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+}
+
+.ry-bar-user-info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.ry-bar-photo img {
+    width: 40px;
+    border-radius: 50%;
+}
+.ry-bar-logout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--bg-white);
+    background: none;
+}
+.ry-home{
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 295px;
+    height: 100vh;
+    width: calc(100% - 255px);
+    padding: 12px;
+    transition: var(--tran-05);
+}
+
+.sidebar-ry.close ~ .ry-home{
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}
+
+.sidebar-ry.close input {
+    display: none;
+}
+
+.sidebar-ry.close span{
+    opacity: 0;
+}
+
+.sidebar-ry span {
+    white-space: nowrap;
+    opacity: 1;
 }
 /********************
     Fuentes
@@ -245,6 +359,23 @@ h1, h2, h3, h4, h5, h6 {
 .expand-12 { grid-column: span 12; }
 
 /********************
+    Flexbox.
+********************/
+.d-flex {
+    display: flex;
+    /*gap: 20px;
+    margin-bottom: 20px;*/
+}
+.flex-col {flex-direction: column;}
+.f-just-sp-beetwen {justify-content: space-between;}
+.f-just-sp-around {justify-content: space-around;}
+.f-just-sp-evenly {justify-content: space-evenly;}
+.f-align-center {align-items: center;}
+.f-just-start {justify-content: flex-start;}
+.f-just-end {justify-content: flex-end;}
+.f-align-start {align-items: flex-start;}
+.f-align-end {align-items: flex-end;}
+/********************
     Effects
 ********************/
 .fadder {
@@ -258,6 +389,11 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
     display: block;
 }
+
+/********************
+    Medidas
+********************/
+.w-total { width: 100%; }
 /********************
     Responsive
 ********************/
