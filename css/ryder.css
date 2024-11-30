@@ -259,7 +259,7 @@ button{
     position: absolute;
     top: 0;
     top: 0;
-    left: 295px;
+    left: 255px;
     height: 100vh;
     width: calc(100% - 255px);
     padding: 12px;
@@ -283,6 +283,59 @@ button{
 .sidebar-ry span {
     white-space: nowrap;
     opacity: 1;
+}
+
+.tab-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 64px;
+    border-bottom: solid 1.5px var(--bg-dark);
+}
+
+.tab-menu ul li {
+    padding: 18px;
+    margin-bottom: 12px;
+    border-bottom: solid 4.5px var(--bg-light);
+}
+
+.tab-menu ul li:hover{
+    border-bottom: solid 4.5px var(--color-primary);
+}
+
+/**SQL Editor*/
+.text-editor .toolbar{
+    background: #adadad;
+    padding: 12px 28px;
+    border-radius: 8px 8px 0 0;
+}
+.text-editor .toolbar .tool-list{
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 22px;
+}
+
+.text-editor .toolbar .tool-list span{
+    padding: 0 8px;
+    border-right: solid 1px var(--color-black);
+}
+.text-box {
+    height: 220px;
+    border: 2.5px solid var(--bg-dark);
+    border-radius: 0 0 8px 8px;
+    padding: 12px;
+    display: flex;
+}
+.text-box .line-idicator {
+    padding: 0 12px;
+    border-right: 1px solid var(--bg-dark);
+}
+.text-box .text-content {
+    height: 100%;
+    outline: none;
+    border: none;
+    padding: 0 12px;
 }
 /********************
     Fuentes
@@ -375,6 +428,12 @@ h1, h2, h3, h4, h5, h6 {
 .f-just-end {justify-content: flex-end;}
 .f-align-start {align-items: flex-start;}
 .f-align-end {align-items: flex-end;}
+/********************
+    Generaol styles
+********************/
+.list-style-none{
+    list-style: none;
+}
 /********************
     Effects
 ********************/
